@@ -1,0 +1,2796 @@
+{
+  "protein": "Spike",
+  "country": "all",
+  "sites": {
+    "19": {
+      "plot": "ta_msd_plots/site_19.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 536,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-19",
+          "slope": 0.9195063278668196,
+          "intercept": -3.92733079674614,
+          "n_points": 522
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 536,
+          "end": 723,
+          "start_date": "2021-06-19",
+          "end_date": "2021-12-23",
+          "slope": 0.7273881835841661,
+          "intercept": -2.8679739524005066,
+          "n_points": 187
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.40970837177159064,
+          "intercept": -2.3103868734950708,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.7682551739622329,
+          "intercept": -4.376952213477305,
+          "n_points": 1230
+        }
+      ]
+    },
+    "21": {
+      "plot": "ta_msd_plots/site_21.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7816527249253631,
+          "intercept": -4.285553256900074,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0115318451175084,
+          "intercept": -4.2938382887093125,
+          "n_points": 570
+        }
+      ]
+    },
+    "22": {
+      "plot": "ta_msd_plots/site_22.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - May 2025",
+          "start": 14,
+          "end": 1950,
+          "start_date": "2020-01-14",
+          "end_date": "2025-05-03",
+          "slope": 1.049262164067415,
+          "intercept": -4.362167764508263,
+          "n_points": 1936
+        },
+        {
+          "label": "May 2025 - Jul 2025",
+          "start": 1950,
+          "end": 2018,
+          "start_date": "2025-05-03",
+          "end_date": "2025-07-10",
+          "slope": 1.2043798875142575,
+          "intercept": -3.3269559521997696,
+          "n_points": 68
+        }
+      ]
+    },
+    "24": {
+      "plot": "ta_msd_plots/site_24.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 789,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-27",
+          "slope": 0.823410285580496,
+          "intercept": -3.980705709515221,
+          "n_points": 775
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 789,
+          "end": 2018,
+          "start_date": "2022-02-27",
+          "end_date": "2025-07-10",
+          "slope": 0.7307850549249113,
+          "intercept": -4.249025483209347,
+          "n_points": 1229
+        }
+      ]
+    },
+    "25": {
+      "plot": "ta_msd_plots/site_25.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 789,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-27",
+          "slope": 0.8232189082973539,
+          "intercept": -3.982011592234984,
+          "n_points": 775
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 789,
+          "end": 2018,
+          "start_date": "2022-02-27",
+          "end_date": "2025-07-10",
+          "slope": 0.7352766031001002,
+          "intercept": -4.253913203813163,
+          "n_points": 1229
+        }
+      ]
+    },
+    "26": {
+      "plot": "ta_msd_plots/site_26.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 789,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-27",
+          "slope": 0.7671320058378118,
+          "intercept": -3.809378406591833,
+          "n_points": 775
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 789,
+          "end": 2018,
+          "start_date": "2022-02-27",
+          "end_date": "2025-07-10",
+          "slope": 0.7355517433634502,
+          "intercept": -4.260756779503725,
+          "n_points": 1229
+        }
+      ]
+    },
+    "27": {
+      "plot": "ta_msd_plots/site_27.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 789,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-27",
+          "slope": 0.8971615244975262,
+          "intercept": -4.186238451642555,
+          "n_points": 775
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 789,
+          "end": 2018,
+          "start_date": "2022-02-27",
+          "end_date": "2025-07-10",
+          "slope": 0.7453858234450941,
+          "intercept": -4.281758991841009,
+          "n_points": 1229
+        }
+      ]
+    },
+    "50": {
+      "plot": "ta_msd_plots/site_50.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7820376039407798,
+          "intercept": -4.280972246429588,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0101056556560273,
+          "intercept": -4.323228606751556,
+          "n_points": 570
+        }
+      ]
+    },
+    "67": {
+      "plot": "ta_msd_plots/site_67.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7192603960032324,
+          "intercept": -4.112794142647934,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.38630084737194925,
+          "intercept": -2.287079763621405,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8003869099657132,
+          "intercept": -4.474275770104092,
+          "n_points": 1230
+        }
+      ]
+    },
+    "69": {
+      "plot": "ta_msd_plots/site_69.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 410,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-13",
+          "slope": 0.9619918713142056,
+          "intercept": -3.4992278150453604,
+          "n_points": 396
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 410,
+          "end": 520,
+          "start_date": "2021-02-13",
+          "end_date": "2021-06-03",
+          "slope": 0.35231299128487636,
+          "intercept": -2.5829302214728798,
+          "n_points": 110
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 520,
+          "end": 723,
+          "start_date": "2021-06-03",
+          "end_date": "2021-12-23",
+          "slope": 0.7910201198495762,
+          "intercept": -2.925414928484496,
+          "n_points": 203
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.34021235217872,
+          "intercept": -2.2370218328002194,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jun 2022",
+          "start": 788,
+          "end": 896,
+          "start_date": "2022-02-26",
+          "end_date": "2022-06-14",
+          "slope": 0.6556329721919254,
+          "intercept": -2.686551379303871,
+          "n_points": 108
+        },
+        {
+          "label": "Jun 2022 - Feb 2023",
+          "start": 896,
+          "end": 1128,
+          "start_date": "2022-06-14",
+          "end_date": "2023-02-01",
+          "slope": 0.6716595998570576,
+          "intercept": -2.8815176207928648,
+          "n_points": 232
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1128,
+          "end": 1448,
+          "start_date": "2023-02-01",
+          "end_date": "2023-12-18",
+          "slope": 0.5960575046100555,
+          "intercept": -2.769657802309484,
+          "n_points": 320
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0092511386148302,
+          "intercept": -4.3035644232476145,
+          "n_points": 570
+        }
+      ]
+    },
+    "70": {
+      "plot": "ta_msd_plots/site_70.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 410,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-13",
+          "slope": 0.9642025034006344,
+          "intercept": -3.5035256073081635,
+          "n_points": 396
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 410,
+          "end": 520,
+          "start_date": "2021-02-13",
+          "end_date": "2021-06-03",
+          "slope": 0.3516737642155391,
+          "intercept": -2.581771782929279,
+          "n_points": 110
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 520,
+          "end": 723,
+          "start_date": "2021-06-03",
+          "end_date": "2021-12-23",
+          "slope": 0.7937757477617096,
+          "intercept": -2.937695270361637,
+          "n_points": 203
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.3365148076077477,
+          "intercept": -2.2325310475945415,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jun 2022",
+          "start": 788,
+          "end": 896,
+          "start_date": "2022-02-26",
+          "end_date": "2022-06-14",
+          "slope": 0.6021223635676913,
+          "intercept": -2.625168498393771,
+          "n_points": 108
+        },
+        {
+          "label": "Jun 2022 - Feb 2023",
+          "start": 896,
+          "end": 1128,
+          "start_date": "2022-06-14",
+          "end_date": "2023-02-01",
+          "slope": 0.6830249876913705,
+          "intercept": -2.9002625086311595,
+          "n_points": 232
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1128,
+          "end": 1448,
+          "start_date": "2023-02-01",
+          "end_date": "2023-12-18",
+          "slope": 0.5974111258953959,
+          "intercept": -2.7828031793952683,
+          "n_points": 320
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0043611908212313,
+          "intercept": -4.293240413713004,
+          "n_points": 570
+        }
+      ]
+    },
+    "83": {
+      "plot": "ta_msd_plots/site_83.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1147,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-20",
+          "slope": 0.9140276486599586,
+          "intercept": -4.3522548567854615,
+          "n_points": 1133
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1444,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-14",
+          "slope": 0.649965081430744,
+          "intercept": -2.920270922128923,
+          "n_points": 297
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1444,
+          "end": 2018,
+          "start_date": "2023-12-14",
+          "end_date": "2025-07-10",
+          "slope": 1.0214767708923596,
+          "intercept": -4.240202013078478,
+          "n_points": 574
+        }
+      ]
+    },
+    "95": {
+      "plot": "ta_msd_plots/site_95.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 705,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-05",
+          "slope": 1.2600103658474842,
+          "intercept": -4.223425838776595,
+          "n_points": 691
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 705,
+          "end": 788,
+          "start_date": "2021-12-05",
+          "end_date": "2022-02-26",
+          "slope": 0.1308915422965964,
+          "intercept": -1.9645962196445925,
+          "n_points": 83
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8139394324560572,
+          "intercept": -4.501834131266821,
+          "n_points": 1230
+        }
+      ]
+    },
+    "127": {
+      "plot": "ta_msd_plots/site_127.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7924370407953224,
+          "intercept": -4.295202665574274,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0109706977204664,
+          "intercept": -4.338568670843863,
+          "n_points": 570
+        }
+      ]
+    },
+    "142": {
+      "plot": "ta_msd_plots/site_142.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 544,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-27",
+          "slope": 0.8545231860955227,
+          "intercept": -3.6827841944826814,
+          "n_points": 530
+        },
+        {
+          "label": "Jun 2021 - Jul 2025",
+          "start": 544,
+          "end": 2018,
+          "start_date": "2021-06-27",
+          "end_date": "2025-07-10",
+          "slope": 0.9447605353672628,
+          "intercept": -4.447529747036684,
+          "n_points": 1474
+        }
+      ]
+    },
+    "143": {
+      "plot": "ta_msd_plots/site_143.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.6638763377008258,
+          "intercept": -3.940203288296309,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.3560977907602943,
+          "intercept": -2.250851779696811,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.7852157246165941,
+          "intercept": -4.4293778407085345,
+          "n_points": 1230
+        }
+      ]
+    },
+    "144": {
+      "plot": "ta_msd_plots/site_144.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 416,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-19",
+          "slope": 0.9434420796603927,
+          "intercept": -3.4296106051198594,
+          "n_points": 402
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 416,
+          "end": 520,
+          "start_date": "2021-02-19",
+          "end_date": "2021-06-03",
+          "slope": 0.3361472465259458,
+          "intercept": -2.5749613347649514,
+          "n_points": 104
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 520,
+          "end": 723,
+          "start_date": "2021-06-03",
+          "end_date": "2021-12-23",
+          "slope": 0.824853480183592,
+          "intercept": -2.9696098797892567,
+          "n_points": 203
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.36440279927280284,
+          "intercept": -2.259659323645604,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Feb 2023",
+          "start": 788,
+          "end": 1133,
+          "start_date": "2022-02-26",
+          "end_date": "2023-02-06",
+          "slope": 0.8683000729321823,
+          "intercept": -3.3665803037707014,
+          "n_points": 345
+        },
+        {
+          "label": "Feb 2023 - Jul 2025",
+          "start": 1133,
+          "end": 2018,
+          "start_date": "2023-02-06",
+          "end_date": "2025-07-10",
+          "slope": 1.1018193652419417,
+          "intercept": -4.552773558955305,
+          "n_points": 885
+        }
+      ]
+    },
+    "146": {
+      "plot": "ta_msd_plots/site_146.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1149,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-22",
+          "slope": 0.9143335901782594,
+          "intercept": -4.318754884285512,
+          "n_points": 1135
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1149,
+          "end": 1442,
+          "start_date": "2023-02-22",
+          "end_date": "2023-12-12",
+          "slope": 0.6865840779878764,
+          "intercept": -3.055458297732332,
+          "n_points": 293
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1442,
+          "end": 2018,
+          "start_date": "2023-12-12",
+          "end_date": "2025-07-10",
+          "slope": 0.9330399890149338,
+          "intercept": -3.993551341192641,
+          "n_points": 576
+        }
+      ]
+    },
+    "156": {
+      "plot": "ta_msd_plots/site_156.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 537,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-20",
+          "slope": 0.8544775941229462,
+          "intercept": -3.753009231621798,
+          "n_points": 523
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 537,
+          "end": 722,
+          "start_date": "2021-06-20",
+          "end_date": "2021-12-22",
+          "slope": 0.7605175021982249,
+          "intercept": -2.928708343208884,
+          "n_points": 185
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 722,
+          "end": 2018,
+          "start_date": "2021-12-22",
+          "end_date": "2025-07-10",
+          "slope": 0.6914738463239938,
+          "intercept": -4.271641851330767,
+          "n_points": 1296
+        }
+      ]
+    },
+    "157": {
+      "plot": "ta_msd_plots/site_157.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 537,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-20",
+          "slope": 0.8679256340332472,
+          "intercept": -3.7683400141011116,
+          "n_points": 523
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 537,
+          "end": 723,
+          "start_date": "2021-06-20",
+          "end_date": "2021-12-23",
+          "slope": 0.7184578665549931,
+          "intercept": -2.8684599070124954,
+          "n_points": 186
+        },
+        {
+          "label": "Dec 2021 - Dec 2023",
+          "start": 723,
+          "end": 1441,
+          "start_date": "2021-12-23",
+          "end_date": "2023-12-11",
+          "slope": 0.8784865286918936,
+          "intercept": -3.668960804481538,
+          "n_points": 718
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1441,
+          "end": 2018,
+          "start_date": "2023-12-11",
+          "end_date": "2025-07-10",
+          "slope": 0.9939304095131488,
+          "intercept": -4.063562101616418,
+          "n_points": 577
+        }
+      ]
+    },
+    "158": {
+      "plot": "ta_msd_plots/site_158.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.5637448745129775,
+          "intercept": -3.5746257125166325,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.9912911388786689,
+          "intercept": -4.276321564212107,
+          "n_points": 570
+        }
+      ]
+    },
+    "183": {
+      "plot": "ta_msd_plots/site_183.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1147,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-20",
+          "slope": 0.9100181065390154,
+          "intercept": -4.349096251730856,
+          "n_points": 1133
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1448,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-18",
+          "slope": 0.586291150543706,
+          "intercept": -2.775988157561291,
+          "n_points": 301
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.8908390333324543,
+          "intercept": -4.088033559163216,
+          "n_points": 570
+        }
+      ]
+    },
+    "211": {
+      "plot": "ta_msd_plots/site_211.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.6623677464867652,
+          "intercept": -3.941788675094831,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.16873053365779395,
+          "intercept": -2.050944824743481,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Dec 2023",
+          "start": 788,
+          "end": 1448,
+          "start_date": "2022-02-26",
+          "end_date": "2023-12-18",
+          "slope": 0.7212632032016758,
+          "intercept": -3.474163559741507,
+          "n_points": 660
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.9622564538679419,
+          "intercept": -4.217546350985265,
+          "n_points": 570
+        }
+      ]
+    },
+    "212": {
+      "plot": "ta_msd_plots/site_212.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7093165667034019,
+          "intercept": -4.112965885734656,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.2567065699505777,
+          "intercept": -2.130512924302784,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Dec 2023",
+          "start": 788,
+          "end": 1448,
+          "start_date": "2022-02-26",
+          "end_date": "2023-12-18",
+          "slope": 0.741028278068987,
+          "intercept": -3.505758701809531,
+          "n_points": 660
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.9585434810996183,
+          "intercept": -4.163325695456684,
+          "n_points": 570
+        }
+      ]
+    },
+    "213": {
+      "plot": "ta_msd_plots/site_213.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 788,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-26",
+          "slope": 0.9090846760555479,
+          "intercept": -4.187506711093522,
+          "n_points": 774
+        },
+        {
+          "label": "Feb 2022 - Feb 2023",
+          "start": 788,
+          "end": 1147,
+          "start_date": "2022-02-26",
+          "end_date": "2023-02-20",
+          "slope": 0.8057407867435824,
+          "intercept": -3.250078741809078,
+          "n_points": 359
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1448,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-18",
+          "slope": 0.5774147578232144,
+          "intercept": -2.7597707010061865,
+          "n_points": 301
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.972045915915677,
+          "intercept": -4.233419711744738,
+          "n_points": 570
+        }
+      ]
+    },
+    "216": {
+      "plot": "ta_msd_plots/site_216.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7899284144722988,
+          "intercept": -4.294901116805173,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0170039256214856,
+          "intercept": -4.3406391465194005,
+          "n_points": 570
+        }
+      ]
+    },
+    "245": {
+      "plot": "ta_msd_plots/site_245.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7971187804931545,
+          "intercept": -4.311082283110128,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.00406792601895,
+          "intercept": -4.316677406387928,
+          "n_points": 570
+        }
+      ]
+    },
+    "252": {
+      "plot": "ta_msd_plots/site_252.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1147,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-20",
+          "slope": 0.8890765910116927,
+          "intercept": -4.323614701782624,
+          "n_points": 1133
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1444,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-14",
+          "slope": 0.6299529184725885,
+          "intercept": -3.0248064768561385,
+          "n_points": 297
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1444,
+          "end": 2018,
+          "start_date": "2023-12-14",
+          "end_date": "2025-07-10",
+          "slope": 1.0060479189855749,
+          "intercept": -4.237536645724799,
+          "n_points": 574
+        }
+      ]
+    },
+    "264": {
+      "plot": "ta_msd_plots/site_264.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7906931727875922,
+          "intercept": -4.2946943764746255,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0129944810126308,
+          "intercept": -4.3355783058699044,
+          "n_points": 570
+        }
+      ]
+    },
+    "332": {
+      "plot": "ta_msd_plots/site_332.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7991885133333358,
+          "intercept": -4.301423653285688,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0184799199899957,
+          "intercept": -4.32617731807464,
+          "n_points": 570
+        }
+      ]
+    },
+    "339": {
+      "plot": "ta_msd_plots/site_339.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7106500205705801,
+          "intercept": -4.0988706124674525,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2023",
+          "start": 723,
+          "end": 1129,
+          "start_date": "2021-12-23",
+          "end_date": "2023-02-02",
+          "slope": 0.8659935795366112,
+          "intercept": -3.451207365077174,
+          "n_points": 406
+        },
+        {
+          "label": "Feb 2023 - Jul 2025",
+          "start": 1129,
+          "end": 2018,
+          "start_date": "2023-02-02",
+          "end_date": "2025-07-10",
+          "slope": 1.017659804920586,
+          "intercept": -4.446740952550844,
+          "n_points": 889
+        }
+      ]
+    },
+    "346": {
+      "plot": "ta_msd_plots/site_346.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Nov 2022",
+          "start": 14,
+          "end": 1055,
+          "start_date": "2020-01-14",
+          "end_date": "2022-11-20",
+          "slope": 0.6393283635473455,
+          "intercept": -3.0566659516311514,
+          "n_points": 1041
+        },
+        {
+          "label": "Nov 2022 - Dec 2023",
+          "start": 1055,
+          "end": 1448,
+          "start_date": "2022-11-20",
+          "end_date": "2023-12-18",
+          "slope": 0.6831343893754096,
+          "intercept": -2.9667892385871526,
+          "n_points": 393
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.38933606566575835,
+          "intercept": -2.4428572018217642,
+          "n_points": 570
+        }
+      ]
+    },
+    "356": {
+      "plot": "ta_msd_plots/site_356.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.8060568520280376,
+          "intercept": -4.311605007228642,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0139699175846952,
+          "intercept": -4.32842576515858,
+          "n_points": 570
+        }
+      ]
+    },
+    "368": {
+      "plot": "ta_msd_plots/site_368.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1147,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-20",
+          "slope": 0.9072221770689437,
+          "intercept": -4.343883498202457,
+          "n_points": 1133
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1448,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-18",
+          "slope": 0.5826934913320655,
+          "intercept": -2.767752860396329,
+          "n_points": 301
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0186187896540764,
+          "intercept": -4.3631656901203,
+          "n_points": 570
+        }
+      ]
+    },
+    "371": {
+      "plot": "ta_msd_plots/site_371.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7100962911457483,
+          "intercept": -4.099713583998516,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.1374246289732165,
+          "intercept": -2.0143695632768055,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8337126990645474,
+          "intercept": -4.541586374934038,
+          "n_points": 1230
+        }
+      ]
+    },
+    "373": {
+      "plot": "ta_msd_plots/site_373.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7099916601898091,
+          "intercept": -4.102034090432758,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7509664871415925,
+          "intercept": -4.480412932209509,
+          "n_points": 1295
+        }
+      ]
+    },
+    "375": {
+      "plot": "ta_msd_plots/site_375.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7101264637584233,
+          "intercept": -4.1019360302820544,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7507388833962578,
+          "intercept": -4.481176664724619,
+          "n_points": 1295
+        }
+      ]
+    },
+    "376": {
+      "plot": "ta_msd_plots/site_376.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 788,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-26",
+          "slope": 0.9001389146736564,
+          "intercept": -4.175197701444054,
+          "n_points": 774
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.7847156374852576,
+          "intercept": -4.41677637690969,
+          "n_points": 1230
+        }
+      ]
+    },
+    "403": {
+      "plot": "ta_msd_plots/site_403.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.8001670041642447,
+          "intercept": -4.334998294347705,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.9946459467249614,
+          "intercept": -4.234881987749059,
+          "n_points": 570
+        }
+      ]
+    },
+    "405": {
+      "plot": "ta_msd_plots/site_405.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 788,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-26",
+          "slope": 0.900655957963107,
+          "intercept": -4.174804905745953,
+          "n_points": 774
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8308095425989718,
+          "intercept": -4.5409131646663665,
+          "n_points": 1230
+        }
+      ]
+    },
+    "408": {
+      "plot": "ta_msd_plots/site_408.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2022",
+          "start": 14,
+          "end": 788,
+          "start_date": "2020-01-14",
+          "end_date": "2022-02-26",
+          "slope": 0.9001429036560852,
+          "intercept": -4.181119841770996,
+          "n_points": 774
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8038935737379019,
+          "intercept": -4.470401623053143,
+          "n_points": 1230
+        }
+      ]
+    },
+    "417": {
+      "plot": "ta_msd_plots/site_417.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 726,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-26",
+          "slope": 0.6620597860003676,
+          "intercept": -3.6955017735245095,
+          "n_points": 712
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 726,
+          "end": 2018,
+          "start_date": "2021-12-26",
+          "end_date": "2025-07-10",
+          "slope": 0.7662178175564356,
+          "intercept": -4.551450985556729,
+          "n_points": 1292
+        }
+      ]
+    },
+    "440": {
+      "plot": "ta_msd_plots/site_440.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7080793690784148,
+          "intercept": -4.111481013779488,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7922279501349013,
+          "intercept": -4.4716266459965786,
+          "n_points": 1295
+        }
+      ]
+    },
+    "444": {
+      "plot": "ta_msd_plots/site_444.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2022",
+          "start": 14,
+          "end": 1073,
+          "start_date": "2020-01-14",
+          "end_date": "2022-12-08",
+          "slope": 0.9627338831345935,
+          "intercept": -4.27004287654024,
+          "n_points": 1059
+        },
+        {
+          "label": "Dec 2022 - Jan 2023",
+          "start": 1073,
+          "end": 1121,
+          "start_date": "2022-12-08",
+          "end_date": "2023-01-25",
+          "slope": -0.4595547329732013,
+          "intercept": -2.2958682412545808,
+          "n_points": 48
+        },
+        {
+          "label": "Jan 2023 - Jul 2025",
+          "start": 1121,
+          "end": 2018,
+          "start_date": "2023-01-25",
+          "end_date": "2025-07-10",
+          "slope": 0.7362842053398175,
+          "intercept": -3.4876428292032413,
+          "n_points": 897
+        }
+      ]
+    },
+    "445": {
+      "plot": "ta_msd_plots/site_445.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1147,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-20",
+          "slope": 0.924011191842847,
+          "intercept": -4.37236087446803,
+          "n_points": 1133
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1147,
+          "end": 1444,
+          "start_date": "2023-02-20",
+          "end_date": "2023-12-14",
+          "slope": 0.6641176653862232,
+          "intercept": -2.9315495138842658,
+          "n_points": 297
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1444,
+          "end": 2018,
+          "start_date": "2023-12-14",
+          "end_date": "2025-07-10",
+          "slope": 0.8806677742922794,
+          "intercept": -3.245020137102676,
+          "n_points": 574
+        }
+      ]
+    },
+    "446": {
+      "plot": "ta_msd_plots/site_446.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 724,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-24",
+          "slope": 0.7246482604532879,
+          "intercept": -4.060397445437822,
+          "n_points": 710
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 724,
+          "end": 788,
+          "start_date": "2021-12-24",
+          "end_date": "2022-02-26",
+          "slope": 0.31727825813903904,
+          "intercept": -2.221566317983133,
+          "n_points": 64
+        },
+        {
+          "label": "Feb 2022 - Feb 2023",
+          "start": 788,
+          "end": 1130,
+          "start_date": "2022-02-26",
+          "end_date": "2023-02-03",
+          "slope": 0.8584181870081579,
+          "intercept": -3.347007651678896,
+          "n_points": 342
+        },
+        {
+          "label": "Feb 2023 - Jul 2025",
+          "start": 1130,
+          "end": 2018,
+          "start_date": "2023-02-03",
+          "end_date": "2025-07-10",
+          "slope": 0.9682505004633388,
+          "intercept": -4.347448615719949,
+          "n_points": 888
+        }
+      ]
+    },
+    "450": {
+      "plot": "ta_msd_plots/site_450.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1444,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-14",
+          "slope": 0.7907824575360678,
+          "intercept": -4.377431287698675,
+          "n_points": 1430
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1444,
+          "end": 2018,
+          "start_date": "2023-12-14",
+          "end_date": "2025-07-10",
+          "slope": 1.00445243047035,
+          "intercept": -4.227205311734317,
+          "n_points": 574
+        }
+      ]
+    },
+    "452": {
+      "plot": "ta_msd_plots/site_452.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 536,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-19",
+          "slope": 0.9876486583187827,
+          "intercept": -4.030815392081473,
+          "n_points": 522
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 536,
+          "end": 723,
+          "start_date": "2021-06-19",
+          "end_date": "2021-12-23",
+          "slope": 0.7328274527541266,
+          "intercept": -2.897562657593496,
+          "n_points": 187
+        },
+        {
+          "label": "Dec 2021 - Jun 2022",
+          "start": 723,
+          "end": 890,
+          "start_date": "2021-12-23",
+          "end_date": "2022-06-08",
+          "slope": 0.9801723762702237,
+          "intercept": -2.9486471179533957,
+          "n_points": 167
+        },
+        {
+          "label": "Jun 2022 - Feb 2023",
+          "start": 890,
+          "end": 1139,
+          "start_date": "2022-06-08",
+          "end_date": "2023-02-12",
+          "slope": 0.7558265932841188,
+          "intercept": -2.889535959498505,
+          "n_points": 249
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1139,
+          "end": 1441,
+          "start_date": "2023-02-12",
+          "end_date": "2023-12-11",
+          "slope": 0.780196450261454,
+          "intercept": -3.0707412264502483,
+          "n_points": 302
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1441,
+          "end": 2018,
+          "start_date": "2023-12-11",
+          "end_date": "2025-07-10",
+          "slope": 1.0113540926691023,
+          "intercept": -4.119072478441187,
+          "n_points": 577
+        }
+      ]
+    },
+    "455": {
+      "plot": "ta_msd_plots/site_455.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1442,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-12",
+          "slope": 0.993671797064256,
+          "intercept": -4.336665356020519,
+          "n_points": 1428
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1442,
+          "end": 2018,
+          "start_date": "2023-12-12",
+          "end_date": "2025-07-10",
+          "slope": 1.0530767160602998,
+          "intercept": -4.119081669295085,
+          "n_points": 576
+        }
+      ]
+    },
+    "456": {
+      "plot": "ta_msd_plots/site_456.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Aug 2023",
+          "start": 14,
+          "end": 1327,
+          "start_date": "2020-01-14",
+          "end_date": "2023-08-19",
+          "slope": 0.9603095240831818,
+          "intercept": -4.443021509940205,
+          "n_points": 1313
+        },
+        {
+          "label": "Aug 2023 - Dec 2023",
+          "start": 1327,
+          "end": 1442,
+          "start_date": "2023-08-19",
+          "end_date": "2023-12-12",
+          "slope": 0.4186159942734572,
+          "intercept": -2.655143400625364,
+          "n_points": 115
+        },
+        {
+          "label": "Dec 2023 - Apr 2024",
+          "start": 1442,
+          "end": 1572,
+          "start_date": "2023-12-12",
+          "end_date": "2024-04-20",
+          "slope": 0.5664533657942454,
+          "intercept": -2.6094252483677214,
+          "n_points": 130
+        },
+        {
+          "label": "Apr 2024 - Jul 2025",
+          "start": 1572,
+          "end": 2018,
+          "start_date": "2024-04-20",
+          "end_date": "2025-07-10",
+          "slope": 1.037994760065587,
+          "intercept": -4.057932278669531,
+          "n_points": 446
+        }
+      ]
+    },
+    "460": {
+      "plot": "ta_msd_plots/site_460.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Nov 2022",
+          "start": 14,
+          "end": 1061,
+          "start_date": "2020-01-14",
+          "end_date": "2022-11-26",
+          "slope": 0.9290101052058928,
+          "intercept": -4.255161221685383,
+          "n_points": 1047
+        },
+        {
+          "label": "Nov 2022 - Jul 2025",
+          "start": 1061,
+          "end": 2018,
+          "start_date": "2022-11-26",
+          "end_date": "2025-07-10",
+          "slope": 1.0546427279184842,
+          "intercept": -4.566195894535734,
+          "n_points": 957
+        }
+      ]
+    },
+    "477": {
+      "plot": "ta_msd_plots/site_477.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.4616802731727098,
+          "intercept": -3.2816628077423355,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7442457085706082,
+          "intercept": -4.4591972829457776,
+          "n_points": 1295
+        }
+      ]
+    },
+    "478": {
+      "plot": "ta_msd_plots/site_478.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 536,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-19",
+          "slope": 0.9073791444953785,
+          "intercept": -3.8865685582590355,
+          "n_points": 522
+        },
+        {
+          "label": "Jun 2021 - Jul 2025",
+          "start": 536,
+          "end": 2018,
+          "start_date": "2021-06-19",
+          "end_date": "2025-07-10",
+          "slope": 0.4076711917772965,
+          "intercept": -2.6487239892784764,
+          "n_points": 1482
+        }
+      ]
+    },
+    "481": {
+      "plot": "ta_msd_plots/site_481.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.8009413980531215,
+          "intercept": -4.311940746346192,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0046231873275049,
+          "intercept": -4.32463112194893,
+          "n_points": 570
+        }
+      ]
+    },
+    "483": {
+      "plot": "ta_msd_plots/site_483.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7920914695347494,
+          "intercept": -4.312946770254918,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.8822811066026751,
+          "intercept": -3.949497722509622,
+          "n_points": 570
+        }
+      ]
+    },
+    "484": {
+      "plot": "ta_msd_plots/site_484.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.5613782103239482,
+          "intercept": -3.399256188858005,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Dec 2023",
+          "start": 723,
+          "end": 1448,
+          "start_date": "2021-12-23",
+          "end_date": "2023-12-18",
+          "slope": 0.7279097031318865,
+          "intercept": -3.5311734527122405,
+          "n_points": 725
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 0.8873373326743452,
+          "intercept": -3.952194797686801,
+          "n_points": 570
+        }
+      ]
+    },
+    "486": {
+      "plot": "ta_msd_plots/site_486.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2022",
+          "start": 14,
+          "end": 896,
+          "start_date": "2020-01-14",
+          "end_date": "2022-06-14",
+          "slope": 0.8104251204458,
+          "intercept": -4.298118957888322,
+          "n_points": 882
+        },
+        {
+          "label": "Jun 2022 - Feb 2023",
+          "start": 896,
+          "end": 1138,
+          "start_date": "2022-06-14",
+          "end_date": "2023-02-11",
+          "slope": 0.8895942460659255,
+          "intercept": -3.119663854536928,
+          "n_points": 242
+        },
+        {
+          "label": "Feb 2023 - Jul 2025",
+          "start": 1138,
+          "end": 2018,
+          "start_date": "2023-02-11",
+          "end_date": "2025-07-10",
+          "slope": 1.085986195301645,
+          "intercept": -4.424848484992594,
+          "n_points": 880
+        }
+      ]
+    },
+    "490": {
+      "plot": "ta_msd_plots/site_490.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2023",
+          "start": 14,
+          "end": 1139,
+          "start_date": "2020-01-14",
+          "end_date": "2023-02-12",
+          "slope": 0.9459414175976235,
+          "intercept": -4.404089640744869,
+          "n_points": 1125
+        },
+        {
+          "label": "Feb 2023 - Dec 2023",
+          "start": 1139,
+          "end": 1448,
+          "start_date": "2023-02-12",
+          "end_date": "2023-12-18",
+          "slope": 0.6158546918817447,
+          "intercept": -2.8427837530686406,
+          "n_points": 309
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0238724221166624,
+          "intercept": -4.35059098447679,
+          "n_points": 570
+        }
+      ]
+    },
+    "493": {
+      "plot": "ta_msd_plots/site_493.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7134059823139406,
+          "intercept": -4.113460237118686,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jun 2022",
+          "start": 723,
+          "end": 896,
+          "start_date": "2021-12-23",
+          "end_date": "2022-06-14",
+          "slope": 0.7086736245511763,
+          "intercept": -2.843614320140443,
+          "n_points": 173
+        },
+        {
+          "label": "Jun 2022 - Jul 2024",
+          "start": 896,
+          "end": 1668,
+          "start_date": "2022-06-14",
+          "end_date": "2024-07-25",
+          "slope": 0.8283398516463215,
+          "intercept": -3.491223568450929,
+          "n_points": 772
+        },
+        {
+          "label": "Jul 2024 - Jul 2025",
+          "start": 1668,
+          "end": 2018,
+          "start_date": "2024-07-25",
+          "end_date": "2025-07-10",
+          "slope": 1.0810718574302056,
+          "intercept": -3.842527766417061,
+          "n_points": 350
+        }
+      ]
+    },
+    "496": {
+      "plot": "ta_msd_plots/site_496.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7134185355820025,
+          "intercept": -4.117397887991542,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.19345816839614596,
+          "intercept": -2.0820603618572044,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8250393868068403,
+          "intercept": -4.5285516053202555,
+          "n_points": 1230
+        }
+      ]
+    },
+    "498": {
+      "plot": "ta_msd_plots/site_498.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7097859643350877,
+          "intercept": -4.107619124357509,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7512701785253054,
+          "intercept": -4.470723181239621,
+          "n_points": 1295
+        }
+      ]
+    },
+    "501": {
+      "plot": "ta_msd_plots/site_501.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 409,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-12",
+          "slope": 0.9634142026749308,
+          "intercept": -3.516618365603568,
+          "n_points": 395
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 409,
+          "end": 534,
+          "start_date": "2021-02-12",
+          "end_date": "2021-06-17",
+          "slope": 0.25574452171106893,
+          "intercept": -2.241747633480848,
+          "n_points": 125
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 534,
+          "end": 723,
+          "start_date": "2021-06-17",
+          "end_date": "2021-12-23",
+          "slope": 0.7483596096726082,
+          "intercept": -2.9475773501015476,
+          "n_points": 189
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7482826618244457,
+          "intercept": -4.465481449438583,
+          "n_points": 1295
+        }
+      ]
+    },
+    "505": {
+      "plot": "ta_msd_plots/site_505.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7097988413967792,
+          "intercept": -4.108353443826217,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.747136309397042,
+          "intercept": -4.461516130498333,
+          "n_points": 1295
+        }
+      ]
+    },
+    "547": {
+      "plot": "ta_msd_plots/site_547.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.716277723738032,
+          "intercept": -4.115640900465551,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.2554075170388415,
+          "intercept": -2.140199503552964,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.7397789657647322,
+          "intercept": -4.268552398962079,
+          "n_points": 1230
+        }
+      ]
+    },
+    "554": {
+      "plot": "ta_msd_plots/site_554.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1444,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-14",
+          "slope": 0.8320987779507077,
+          "intercept": -4.445012773932014,
+          "n_points": 1430
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1444,
+          "end": 2018,
+          "start_date": "2023-12-14",
+          "end_date": "2025-07-10",
+          "slope": 1.013172785441047,
+          "intercept": -4.241853522510558,
+          "n_points": 574
+        }
+      ]
+    },
+    "570": {
+      "plot": "ta_msd_plots/site_570.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 416,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-19",
+          "slope": 1.005266893845015,
+          "intercept": -3.578930725175682,
+          "n_points": 402
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 416,
+          "end": 520,
+          "start_date": "2021-02-19",
+          "end_date": "2021-06-03",
+          "slope": 0.36332018211943024,
+          "intercept": -2.622204700588823,
+          "n_points": 104
+        },
+        {
+          "label": "Jun 2021 - Dec 2023",
+          "start": 520,
+          "end": 1448,
+          "start_date": "2021-06-03",
+          "end_date": "2023-12-18",
+          "slope": 0.6921940220089351,
+          "intercept": -3.501291909382782,
+          "n_points": 928
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0179790375523912,
+          "intercept": -4.34621358042104,
+          "n_points": 570
+        }
+      ]
+    },
+    "614": {
+      "plot": "ta_msd_plots/site_614.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Mar 2020",
+          "start": 14,
+          "end": 67,
+          "start_date": "2020-01-14",
+          "end_date": "2020-03-07",
+          "slope": 0.7012053857892581,
+          "intercept": -2.1967560454182555,
+          "n_points": 53
+        },
+        {
+          "label": "Mar 2020 - Jul 2025",
+          "start": 67,
+          "end": 2018,
+          "start_date": "2020-03-07",
+          "end_date": "2025-07-10",
+          "slope": 0.819534428084146,
+          "intercept": -4.759362300635509,
+          "n_points": 1951
+        }
+      ]
+    },
+    "621": {
+      "plot": "ta_msd_plots/site_621.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7988307372545267,
+          "intercept": -4.315880874327429,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.006898451028065,
+          "intercept": -4.321091074927042,
+          "n_points": 570
+        }
+      ]
+    },
+    "655": {
+      "plot": "ta_msd_plots/site_655.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.6189710191146129,
+          "intercept": -3.723515433930313,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7483309761440594,
+          "intercept": -4.501349531128163,
+          "n_points": 1295
+        }
+      ]
+    },
+    "679": {
+      "plot": "ta_msd_plots/site_679.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.710087982645212,
+          "intercept": -4.095445001589802,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7473185958522657,
+          "intercept": -3.779767539362197,
+          "n_points": 1295
+        }
+      ]
+    },
+    "681": {
+      "plot": "ta_msd_plots/site_681.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 409,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-12",
+          "slope": 0.9858868498473465,
+          "intercept": -3.5372841997552187,
+          "n_points": 395
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 409,
+          "end": 533,
+          "start_date": "2021-02-12",
+          "end_date": "2021-06-16",
+          "slope": 0.527248007069536,
+          "intercept": -2.6004309600410154,
+          "n_points": 124
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 533,
+          "end": 723,
+          "start_date": "2021-06-16",
+          "end_date": "2021-12-23",
+          "slope": 0.8466601101655462,
+          "intercept": -2.984616789409688,
+          "n_points": 190
+        },
+        {
+          "label": "Dec 2021 - Dec 2023",
+          "start": 723,
+          "end": 1448,
+          "start_date": "2021-12-23",
+          "end_date": "2023-12-18",
+          "slope": 0.7356747748757038,
+          "intercept": -3.5557206892852493,
+          "n_points": 725
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.006983734397805,
+          "intercept": -4.335642099986698,
+          "n_points": 570
+        }
+      ]
+    },
+    "716": {
+      "plot": "ta_msd_plots/site_716.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 416,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-19",
+          "slope": 1.0102781588952212,
+          "intercept": -3.586388445307623,
+          "n_points": 402
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 416,
+          "end": 520,
+          "start_date": "2021-02-19",
+          "end_date": "2021-06-03",
+          "slope": 0.33300315699594735,
+          "intercept": -2.597801854383446,
+          "n_points": 104
+        },
+        {
+          "label": "Jun 2021 - Jul 2025",
+          "start": 520,
+          "end": 2018,
+          "start_date": "2021-06-03",
+          "end_date": "2025-07-10",
+          "slope": 0.7945985965928424,
+          "intercept": -4.360489943128713,
+          "n_points": 1498
+        }
+      ]
+    },
+    "764": {
+      "plot": "ta_msd_plots/site_764.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7103444643144884,
+          "intercept": -4.099459234597886,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7579815085152652,
+          "intercept": -4.491210284991907,
+          "n_points": 1295
+        }
+      ]
+    },
+    "796": {
+      "plot": "ta_msd_plots/site_796.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7056453358991532,
+          "intercept": -4.081434758064868,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7459340514369341,
+          "intercept": -4.487596013291968,
+          "n_points": 1295
+        }
+      ]
+    },
+    "856": {
+      "plot": "ta_msd_plots/site_856.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7111117025977086,
+          "intercept": -4.1037669965417045,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.2078762329672477,
+          "intercept": -2.086085097287915,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8240618922630821,
+          "intercept": -4.535058600495021,
+          "n_points": 1230
+        }
+      ]
+    },
+    "939": {
+      "plot": "ta_msd_plots/site_939.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7865545794744534,
+          "intercept": -4.290493094249932,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0352542810796892,
+          "intercept": -4.372472831971407,
+          "n_points": 570
+        }
+      ]
+    },
+    "950": {
+      "plot": "ta_msd_plots/site_950.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Jun 2021",
+          "start": 14,
+          "end": 536,
+          "start_date": "2020-01-14",
+          "end_date": "2021-06-19",
+          "slope": 0.9385150868677988,
+          "intercept": -3.955780751415651,
+          "n_points": 522
+        },
+        {
+          "label": "Jun 2021 - Dec 2021",
+          "start": 536,
+          "end": 722,
+          "start_date": "2021-06-19",
+          "end_date": "2021-12-22",
+          "slope": 0.7309142706594287,
+          "intercept": -2.90967698982591,
+          "n_points": 186
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 722,
+          "end": 2018,
+          "start_date": "2021-12-22",
+          "end_date": "2025-07-10",
+          "slope": 0.7491170335378381,
+          "intercept": -4.470024100625318,
+          "n_points": 1296
+        }
+      ]
+    },
+    "954": {
+      "plot": "ta_msd_plots/site_954.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7104257966890483,
+          "intercept": -4.094284422856867,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7464587353680108,
+          "intercept": -4.495338515102428,
+          "n_points": 1295
+        }
+      ]
+    },
+    "969": {
+      "plot": "ta_msd_plots/site_969.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.710537741420702,
+          "intercept": -4.094319501119465,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Jul 2025",
+          "start": 723,
+          "end": 2018,
+          "start_date": "2021-12-23",
+          "end_date": "2025-07-10",
+          "slope": 0.7475427783570998,
+          "intercept": -4.495915855442092,
+          "n_points": 1295
+        }
+      ]
+    },
+    "981": {
+      "plot": "ta_msd_plots/site_981.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2021",
+          "start": 14,
+          "end": 723,
+          "start_date": "2020-01-14",
+          "end_date": "2021-12-23",
+          "slope": 0.7136782011915943,
+          "intercept": -4.111063843061088,
+          "n_points": 709
+        },
+        {
+          "label": "Dec 2021 - Feb 2022",
+          "start": 723,
+          "end": 788,
+          "start_date": "2021-12-23",
+          "end_date": "2022-02-26",
+          "slope": 0.17678254661931936,
+          "intercept": -2.0551854317446283,
+          "n_points": 65
+        },
+        {
+          "label": "Feb 2022 - Jul 2025",
+          "start": 788,
+          "end": 2018,
+          "start_date": "2022-02-26",
+          "end_date": "2025-07-10",
+          "slope": 0.8243720592936826,
+          "intercept": -4.535060403099791,
+          "n_points": 1230
+        }
+      ]
+    },
+    "982": {
+      "plot": "ta_msd_plots/site_982.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 416,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-19",
+          "slope": 1.00835041471439,
+          "intercept": -3.5854820295146443,
+          "n_points": 402
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 416,
+          "end": 520,
+          "start_date": "2021-02-19",
+          "end_date": "2021-06-03",
+          "slope": 0.3585479051959806,
+          "intercept": -2.6180692383167554,
+          "n_points": 104
+        },
+        {
+          "label": "Jun 2021 - Jul 2025",
+          "start": 520,
+          "end": 2018,
+          "start_date": "2021-06-03",
+          "end_date": "2025-07-10",
+          "slope": 0.7929614026890108,
+          "intercept": -4.3562009306550316,
+          "n_points": 1498
+        }
+      ]
+    },
+    "1104": {
+      "plot": "ta_msd_plots/site_1104.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - May 2024",
+          "start": 14,
+          "end": 1606,
+          "start_date": "2020-01-14",
+          "end_date": "2024-05-24",
+          "slope": 0.834741543537845,
+          "intercept": -4.3065963977717665,
+          "n_points": 1592
+        },
+        {
+          "label": "May 2024 - May 2025",
+          "start": 1606,
+          "end": 1965,
+          "start_date": "2024-05-24",
+          "end_date": "2025-05-18",
+          "slope": 0.5516135183419237,
+          "intercept": -2.8649535764199445,
+          "n_points": 359
+        },
+        {
+          "label": "May 2025 - Jul 2025",
+          "start": 1965,
+          "end": 2018,
+          "start_date": "2025-05-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0960820849709536,
+          "intercept": -2.9739443197416287,
+          "n_points": 53
+        }
+      ]
+    },
+    "1118": {
+      "plot": "ta_msd_plots/site_1118.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Feb 2021",
+          "start": 14,
+          "end": 416,
+          "start_date": "2020-01-14",
+          "end_date": "2021-02-19",
+          "slope": 1.009721682982511,
+          "intercept": -3.5879242746103177,
+          "n_points": 402
+        },
+        {
+          "label": "Feb 2021 - Jun 2021",
+          "start": 416,
+          "end": 520,
+          "start_date": "2021-02-19",
+          "end_date": "2021-06-03",
+          "slope": 0.3513090746121535,
+          "intercept": -2.610926222982968,
+          "n_points": 104
+        },
+        {
+          "label": "Jun 2021 - Jul 2025",
+          "start": 520,
+          "end": 2018,
+          "start_date": "2021-06-03",
+          "end_date": "2025-07-10",
+          "slope": 0.7772606336521174,
+          "intercept": -4.308959389281469,
+          "n_points": 1498
+        }
+      ]
+    },
+    "1143": {
+      "plot": "ta_msd_plots/site_1143.png",
+      "intervals": [
+        {
+          "label": "Jan 2020 - Dec 2023",
+          "start": 14,
+          "end": 1448,
+          "start_date": "2020-01-14",
+          "end_date": "2023-12-18",
+          "slope": 0.7908046224772732,
+          "intercept": -4.295978847401965,
+          "n_points": 1434
+        },
+        {
+          "label": "Dec 2023 - Jul 2025",
+          "start": 1448,
+          "end": 2018,
+          "start_date": "2023-12-18",
+          "end_date": "2025-07-10",
+          "slope": 1.0349620324235513,
+          "intercept": -4.3802968969729115,
+          "n_points": 570
+        }
+      ]
+    }
+  }
+}

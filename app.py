@@ -87,6 +87,12 @@ def _format_ci(low, high) -> str:
     return f"[{low:.6g}, {high:.6g}]"
 
 
+def _format_number(value) -> str:
+    if value is None:
+        return "-"
+    return f"{value:.6g}"
+
+
 @app.route("/")
 def index():
     try:
@@ -114,6 +120,7 @@ def index():
         selected_site=selected_site,
         site_data=site_data,
         format_ci=_format_ci,
+        format_number=_format_number,
     )
 
 
@@ -285,6 +292,7 @@ PAGE_TEMPLATE = """
         <thead>
           <tr>
             <th>Interval</th>
+            <th>Phase</th>
             <th>Consensus base</th>
             <th>Mutant base</th>
             <th>Start</th>
@@ -292,6 +300,12 @@ PAGE_TEMPLATE = """
             <th>Alpha coefficient</th>
             <th>Alpha 95% CI</th>
             <th>R²</th>
+            <th>WF s / day</th>
+            <th>WF 95% CI</th>
+            <th>WF R²</th>
+            <th>Residual alpha</th>
+            <th>Residual alpha 95% CI</th>
+            <th>Residual R²</th>
             <th>Diffusion type</th>
             <th>Days</th>
           </tr>
@@ -300,13 +314,20 @@ PAGE_TEMPLATE = """
           {% for interval in site_data.get("intervals", []) %}
             <tr class="interval-row" data-interval-index="{{ loop.index0 }}">
               <td>{{ interval.label }}</td>
+              <td>{{ interval.get("phase_label", "active") }}</td>
               <td>{{ interval.get("most_common_aa") or "-" }}</td>
               <td>{{ interval.get("second_most_common_aa") or "-" }}</td>
               <td>{{ interval.start_date }} ({{ interval.start }})</td>
               <td>{{ interval.end_date }} ({{ interval.end }})</td>
-              <td>{{ "%.6g"|format(interval.slope) }}</td>
+              <td>{{ format_number(interval.get("slope")) }}</td>
               <td>{{ format_ci(interval.get("alpha_ci_low"), interval.get("alpha_ci_high")) }}</td>
-              <td>{{ "%.6g"|format(interval.get("r_squared", 0)) }}</td>
+              <td>{{ format_number(interval.get("r_squared")) }}</td>
+              <td>{{ format_number(interval.get("wf_selection_coefficient")) }}</td>
+              <td>{{ format_ci(interval.get("wf_selection_ci_low"), interval.get("wf_selection_ci_high")) }}</td>
+              <td>{{ format_number(interval.get("wf_r_squared")) }}</td>
+              <td>{{ format_number(interval.get("residual_slope")) }}</td>
+              <td>{{ format_ci(interval.get("residual_alpha_ci_low"), interval.get("residual_alpha_ci_high")) }}</td>
+              <td>{{ format_number(interval.get("residual_r_squared")) }}</td>
               <td>{{ interval.get("diffusion_label", "uncertain") }}</td>
               <td>{{ interval.n_points }}</td>
             </tr>
@@ -436,7 +457,7 @@ PAGE_TEMPLATE = """
           series.forEach(s => {
             const option = document.createElement("option");
             option.value = String(s._seriesIndex);
-            const status = s.show_in_ta_msd_plot === false ? "inconclusive" : (s.diffusion_label || "unlabeled");
+            const status = s.phase_label === "quiescent" ? "quiescent" : (s.show_in_ta_msd_plot === false ? "inconclusive" : (s.diffusion_label || "unlabeled"));
             option.textContent = `${s.label} (${status})`;
             intervalFocus.appendChild(option);
           });
@@ -478,7 +499,19 @@ PAGE_TEMPLATE = """
             addText(svg, "No intervals meet the TA-MSD plot R² cutoff.", topPanel.x + topPanel.width / 2, topPanel.y + topPanel.height / 2, { "text-anchor": "middle", "font-size": 14, fill: "#6b7280" });
           } else {
             const allTau = taMsdSeries.flatMap(s => s.tau_vals || []).filter(v => v > 0);
-            const allMsd = taMsdSeries.flatMap(s => s.ta_msd_vals || []).filter(v => v > 0);
+            const allMsd = taMsdSeries.flatMap(s => {
+              const msdVals = s.ta_msd_vals || [];
+              const seVals = s.ta_msd_standard_error_vals || [];
+              return msdVals.flatMap((msd, idx) => {
+                const se = Number(seVals[idx] || 0);
+                const values = [msd];
+                if (Number.isFinite(se) && se > 0) {
+                  values.push(msd + se);
+                  if (msd - se > 0) values.push(msd - se);
+                }
+                return values;
+              });
+            }).filter(v => v > 0);
             let xMin = Math.min(...allTau);
             let xMax = Math.max(...allTau);
             let yMin = Math.min(...allMsd);
@@ -491,8 +524,19 @@ PAGE_TEMPLATE = """
 
             taMsdSeries.forEach((s) => {
               const color = colors[s._seriesIndex % colors.length];
-              const points = (s.tau_vals || []).map((tau, idx) => [tau, s.ta_msd_vals[idx]]).filter(point => point[0] > 0 && point[1] > 0);
-              points.forEach(([tau, msd]) => {
+              const seVals = s.ta_msd_standard_error_vals || [];
+              const points = (s.tau_vals || []).map((tau, idx) => [tau, s.ta_msd_vals[idx], Number(seVals[idx] || 0)]).filter(point => point[0] > 0 && point[1] > 0);
+              points.forEach(([tau, msd, se]) => {
+                if (Number.isFinite(se) && se > 0) {
+                  const errorLow = Math.max(msd - se, yMin);
+                  const errorHigh = msd + se;
+                  const x = xScale(tau);
+                  const yLow = yScale(errorLow);
+                  const yHigh = yScale(errorHigh);
+                  svg.appendChild(svgEl("line", { x1: x, y1: yHigh, x2: x, y2: yLow, stroke: color, "stroke-width": 1.2, opacity: 0.45 }));
+                  svg.appendChild(svgEl("line", { x1: x - 4, y1: yHigh, x2: x + 4, y2: yHigh, stroke: color, "stroke-width": 1.2, opacity: 0.45 }));
+                  svg.appendChild(svgEl("line", { x1: x - 4, y1: yLow, x2: x + 4, y2: yLow, stroke: color, "stroke-width": 1.2, opacity: 0.45 }));
+                }
                 svg.appendChild(svgEl("circle", { cx: xScale(tau), cy: yScale(msd), r: 3, fill: color, opacity: 0.85 }));
               });
 
@@ -516,6 +560,21 @@ PAGE_TEMPLATE = """
             const fy = value => panel.y + panel.height - value * panel.height;
             drawAxes(svg, panel, linearTicks(dateMin, dateMax, 5), linearTicks(0, 1, 6), fx, fy, "Date", "Mutant frequency", formatDateTick, formatTick);
             addText(svg, `Mutant frequency - ${s.label}`, panel.x, panel.y - 14, { "font-size": 14, "font-weight": 700, fill: "#111827" });
+
+            const wfMean = s.wf_fitted_mean || [];
+            const wfPoints = dates.map((date, idx) => [date, wfMean[idx]]).filter(point => Number.isFinite(point[0]) && Number.isFinite(point[1]));
+            if (wfPoints.length >= 2) {
+              const wfPath = wfPoints.map(([date, mean]) => [fx(date), fy(Math.max(0, Math.min(1, mean)))]);
+              svg.appendChild(svgEl("path", {
+                d: pathFromPoints(wfPath),
+                fill: "none",
+                stroke: "#111827",
+                "stroke-width": 2.4,
+                "stroke-dasharray": "7 4",
+                opacity: 0.9,
+              }));
+              addText(svg, "WF mean", panel.x + panel.width - 72, panel.y + 18, { "font-size": 12, "font-weight": 700, fill: "#111827" });
+            }
 
             dates.forEach((date, idx) => {
               svg.appendChild(svgEl("circle", { cx: fx(date), cy: fy(freqs[idx]), r: 3, fill: colors[s._seriesIndex % colors.length], opacity: 0.85 }));

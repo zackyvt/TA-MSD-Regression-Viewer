@@ -14,6 +14,8 @@ JSON_NAME = "ta_msd_regressions.json"
 PLOT_DATA_JSON_NAME = "ta_msd_plot_data.json"
 DEFAULT_WEBAPP_PLOTS_ROOT = BASE_DIR / "plots" / "Spike"
 DEFAULT_PUBLISH_PLOTS_ROOT = PUBLISH_DIR / "plots" / "Spike"
+INTERVAL_BROWSER_DEFAULT_PAGE_SIZE = 24
+INTERVAL_BROWSER_MAX_PAGE_SIZE = 96
 
 app = Flask(__name__)
 
@@ -93,6 +95,144 @@ def _format_number(value) -> str:
     return f"{value:.6g}"
 
 
+ALPHA_FILTERS = [
+    ("any", "Any alpha label"),
+    ("superdiffusive", "Superdiffusive"),
+    ("subdiffusive", "Subdiffusive"),
+    ("brownian", "Brownian consistent"),
+    ("quiescent", "Quiescent"),
+    ("inconclusive", "Inconclusive"),
+]
+
+WF_R2_FILTERS = [
+    ("any", "Any WF R²"),
+    ("lt_0_2", "< 0.2"),
+    ("0_2_0_5", "0.2 - 0.5"),
+    ("0_5_0_7", "0.5 - 0.7"),
+    ("0_7_0_9", "0.7 - 0.9"),
+    ("gt_0_9", "> 0.9"),
+]
+
+RESIDUAL_ALPHA_FILTERS = [
+    ("any", "Any residual alpha"),
+    ("subdiffusive", "Subdiffusive"),
+    ("brownian", "Brownian consistent"),
+    ("superdiffusive", "Superdiffusive"),
+]
+
+
+def _normalize_diffusion_label(label) -> str:
+    normalized = str(label or "").strip().casefold()
+    if normalized in {"brownian-consistent", "brownian consistent", "brownian"}:
+        return "brownian"
+    if normalized in {"superdiffusive", "subdiffusive", "inconclusive", "quiescent"}:
+        return normalized
+    return normalized or "unknown"
+
+
+def _interval_alpha_category(interval: dict) -> str:
+    phase_label = str(interval.get("phase_label") or "").casefold()
+    if phase_label == "quiescent":
+        return "quiescent"
+    return _normalize_diffusion_label(interval.get("diffusion_label"))
+
+
+def _wf_r2_matches(value, selected_filter: str) -> bool:
+    if selected_filter == "any":
+        return True
+    if value is None:
+        return False
+    try:
+        value = float(value)
+    except (TypeError, ValueError):
+        return False
+    if selected_filter == "lt_0_2":
+        return value < 0.2
+    if selected_filter == "0_2_0_5":
+        return 0.2 <= value < 0.5
+    if selected_filter == "0_5_0_7":
+        return 0.5 <= value < 0.7
+    if selected_filter == "0_7_0_9":
+        return 0.7 <= value < 0.9
+    if selected_filter == "gt_0_9":
+        return value >= 0.9
+    return True
+
+
+def _series_summary(series: dict) -> dict:
+    return {
+        "label": series.get("label"),
+        "dates": series.get("dates", []),
+        "date_labels": series.get("date_labels", []),
+        "mutant_freq": series.get("mutant_freq", []),
+        "wf_fitted_mean": series.get("wf_fitted_mean", []),
+    }
+
+
+def _browse_interval_cards(
+    alpha_filter: str,
+    wf_r2_filter: str,
+    residual_alpha_filter: str,
+    offset: int = 0,
+    limit: int | None = None,
+) -> tuple[list[dict], int]:
+    cards = []
+    total_matches = 0
+    for country in _available_countries():
+        _, regression_data = _load_data(country)
+        plot_data = None
+        for site in sorted(regression_data.get("sites", {}).keys(), key=_site_sort_key):
+            intervals = regression_data.get("sites", {}).get(site, {}).get("intervals", [])
+            for interval_index, interval in enumerate(intervals):
+                alpha_category = _interval_alpha_category(interval)
+                residual_category = _normalize_diffusion_label(interval.get("residual_diffusion_label"))
+                if alpha_filter != "any" and alpha_category != alpha_filter:
+                    continue
+                if not _wf_r2_matches(interval.get("wf_r_squared"), wf_r2_filter):
+                    continue
+                if residual_alpha_filter != "any" and residual_category != residual_alpha_filter:
+                    continue
+
+                total_matches += 1
+                if total_matches <= offset:
+                    continue
+                if limit is not None and len(cards) >= limit:
+                    continue
+
+                if plot_data is None:
+                    plot_data = _load_plot_data(country)
+                series_list = plot_data.get("sites", {}).get(site, {}).get("series", [])
+                series = series_list[interval_index] if interval_index < len(series_list) else {}
+                cards.append({
+                    "country": country,
+                    "site": site,
+                    "interval_index": interval_index,
+                    "label": interval.get("label", ""),
+                    "phase_label": interval.get("phase_label", "active"),
+                    "alpha_label": alpha_category,
+                    "residual_alpha_label": residual_category,
+                    "wf_r_squared": interval.get("wf_r_squared"),
+                    "wf_selection_coefficient": interval.get("wf_selection_coefficient"),
+                    "alpha": interval.get("slope"),
+                    "residual_alpha": interval.get("residual_slope"),
+                    "start_date": interval.get("start_date"),
+                    "end_date": interval.get("end_date"),
+                    "series": _series_summary(series),
+                })
+    return cards, total_matches
+
+
+def _parse_positive_int(value, default, maximum=None):
+    try:
+        parsed = int(value)
+    except (TypeError, ValueError):
+        parsed = default
+    parsed = max(parsed, 1)
+    if maximum is not None:
+        parsed = min(parsed, maximum)
+    return parsed
+
+
 @app.route("/")
 def index():
     try:
@@ -120,6 +260,66 @@ def index():
         selected_site=selected_site,
         site_data=site_data,
         format_ci=_format_ci,
+        format_number=_format_number,
+    )
+
+
+@app.route("/intervals")
+def interval_browser():
+    try:
+        countries = _available_countries()
+        alpha_filter = request.args.get("alpha", "any")
+        wf_r2_filter = request.args.get("wf_r2", "any")
+        residual_alpha_filter = request.args.get("residual_alpha", "any")
+        if alpha_filter not in dict(ALPHA_FILTERS):
+            alpha_filter = "any"
+        if wf_r2_filter not in dict(WF_R2_FILTERS):
+            wf_r2_filter = "any"
+        if residual_alpha_filter not in dict(RESIDUAL_ALPHA_FILTERS):
+            residual_alpha_filter = "any"
+        page_size = _parse_positive_int(
+            request.args.get("page_size"),
+            INTERVAL_BROWSER_DEFAULT_PAGE_SIZE,
+            INTERVAL_BROWSER_MAX_PAGE_SIZE,
+        )
+        page = _parse_positive_int(request.args.get("page"), 1)
+        page = _parse_positive_int(request.args.get("page"), 1)
+        start = (page - 1) * page_size
+        cards, total_cards = _browse_interval_cards(
+            alpha_filter,
+            wf_r2_filter,
+            residual_alpha_filter,
+            offset=start,
+            limit=page_size,
+        )
+        total_pages = max((total_cards + page_size - 1) // page_size, 1)
+        if page > total_pages:
+            page = total_pages
+            start = (page - 1) * page_size
+            cards, total_cards = _browse_interval_cards(
+                alpha_filter,
+                wf_r2_filter,
+                residual_alpha_filter,
+                offset=start,
+                limit=page_size,
+            )
+    except (FileNotFoundError, json.JSONDecodeError) as exc:
+        return render_template_string(ERROR_TEMPLATE, error=str(exc)), 500
+
+    return render_template_string(
+        INTERVAL_BROWSER_TEMPLATE,
+        countries=countries,
+        cards=cards,
+        alpha_filters=ALPHA_FILTERS,
+        wf_r2_filters=WF_R2_FILTERS,
+        residual_alpha_filters=RESIDUAL_ALPHA_FILTERS,
+        selected_alpha=alpha_filter,
+        selected_wf_r2=wf_r2_filter,
+        selected_residual_alpha=residual_alpha_filter,
+        page=page,
+        page_size=page_size,
+        total_cards=total_cards,
+        total_pages=total_pages,
         format_number=_format_number,
     )
 
@@ -176,6 +376,20 @@ PAGE_TEMPLATE = """
       margin: 0 0 22px;
       color: #6b7280;
       font-size: 14px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      margin: 0 0 22px;
+      font-size: 14px;
+    }
+    .nav a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav a:hover {
+      text-decoration: underline;
     }
     form {
       display: flex;
@@ -270,6 +484,10 @@ PAGE_TEMPLATE = """
       Protein: {{ data.get("protein", "unknown") }} |
       Country/region: {{ data.get("country", "unknown") }} |
     </p>
+    <nav class="nav">
+      <a href="{{ url_for('index', country=selected_country, site=selected_site) }}">Site viewer</a>
+      <a href="{{ url_for('interval_browser') }}">Browse intervals</a>
+    </nav>
 
     {% if selected_site %}
       <form method="get">
@@ -603,6 +821,363 @@ PAGE_TEMPLATE = """
       <div class="empty">No site regression data found. Run generate_plots.py first.</div>
     {% endif %}
   </main>
+</body>
+</html>
+"""
+
+
+INTERVAL_BROWSER_TEMPLATE = """
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TA MSD Interval Browser</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #f3f4f6;
+    }
+    body {
+      margin: 0;
+      padding: 32px;
+    }
+    main {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      padding: 28px;
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+    }
+    .meta {
+      margin: 0 0 22px;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .nav {
+      display: flex;
+      gap: 14px;
+      margin: 0 0 22px;
+      font-size: 14px;
+    }
+    .nav a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 16px;
+      align-items: end;
+      margin-bottom: 24px;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      color: #374151;
+    }
+    select,
+    button {
+      min-width: 190px;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 15px;
+      background: #fff;
+    }
+    button {
+      min-width: 110px;
+      color: #fff;
+      background: #2563eb;
+      border-color: #2563eb;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .pager {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 18px;
+      padding: 12px 0;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    .pager-links {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .pager a,
+    .pager .disabled {
+      display: inline-block;
+      padding: 7px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .pager a {
+      color: #2563eb;
+      background: #fff;
+    }
+    .pager .disabled {
+      color: #9ca3af;
+      background: #f3f4f6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #fff;
+      overflow: hidden;
+    }
+    .mini-plot {
+      height: 220px;
+      border-bottom: 1px solid #e5e7eb;
+      background: #fff;
+    }
+    .mini-plot svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .card-body {
+      padding: 12px 14px 14px;
+      font-size: 13px;
+      color: #374151;
+    }
+    .card-title {
+      margin: 0 0 6px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #111827;
+    }
+    .card-body a {
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .card-body a:hover {
+      text-decoration: underline;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4px 10px;
+      margin: 8px 0;
+      color: #4b5563;
+    }
+    .empty {
+      padding: 24px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Interval Browser</h1>
+    <p class="meta">Filter intervals across {{ countries|length }} country/region data sets.</p>
+    <nav class="nav">
+      <a href="{{ url_for('index') }}">Site viewer</a>
+      <a href="{{ url_for('interval_browser', alpha=selected_alpha, wf_r2=selected_wf_r2, residual_alpha=selected_residual_alpha) }}">Browse intervals</a>
+    </nav>
+
+    <form method="get">
+      <label>
+        Alpha label
+        <select name="alpha">
+          {% for value, label in alpha_filters %}
+            <option value="{{ value }}" {% if value == selected_alpha %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        WF R²
+        <select name="wf_r2">
+          {% for value, label in wf_r2_filters %}
+            <option value="{{ value }}" {% if value == selected_wf_r2 %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        Residual alpha
+        <select name="residual_alpha">
+          {% for value, label in residual_alpha_filters %}
+            <option value="{{ value }}" {% if value == selected_residual_alpha %}selected{% endif %}>{{ label }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label>
+        Per page
+        <select name="page_size">
+          {% for value in [12, 24, 48, 96] %}
+            <option value="{{ value }}" {% if value == page_size %}selected{% endif %}>{{ value }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <input type="hidden" name="page" value="1">
+      <button type="submit">Apply</button>
+    </form>
+
+    <div class="pager">
+      <div>
+        Showing {{ cards|length }} of {{ total_cards }} matched interval{{ "" if total_cards == 1 else "s" }}.
+        Page {{ page }} of {{ total_pages }}.
+      </div>
+      <div class="pager-links">
+        {% if page > 1 %}
+          <a href="{{ url_for('interval_browser', alpha=selected_alpha, wf_r2=selected_wf_r2, residual_alpha=selected_residual_alpha, page=page-1, page_size=page_size) }}">Previous</a>
+        {% else %}
+          <span class="disabled">Previous</span>
+        {% endif %}
+        {% if page < total_pages %}
+          <a href="{{ url_for('interval_browser', alpha=selected_alpha, wf_r2=selected_wf_r2, residual_alpha=selected_residual_alpha, page=page+1, page_size=page_size) }}">Next</a>
+        {% else %}
+          <span class="disabled">Next</span>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if cards %}
+      <div class="grid">
+        {% for card in cards %}
+          <article class="card">
+            <div id="mini-plot-{{ loop.index0 }}" class="mini-plot"></div>
+            <div class="card-body">
+              <p class="card-title">{{ card.country }} | Site {{ card.site }}</p>
+              <div>{{ card.label }} | {{ card.phase_label }}</div>
+              <div class="stats">
+                <div>Alpha: {{ card.alpha_label }}</div>
+                <div>Residual: {{ card.residual_alpha_label }}</div>
+                <div>WF R²: {{ format_number(card.wf_r_squared) }}</div>
+                <div>WF s: {{ format_number(card.get("wf_selection_coefficient")) }}</div>
+              </div>
+              <a href="{{ url_for('index', country=card.country, site=card.site) }}" target="_blank" rel="noopener">Open full site page</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="pager">
+        <div>Page {{ page }} of {{ total_pages }}</div>
+        <div class="pager-links">
+          {% if page > 1 %}
+            <a href="{{ url_for('interval_browser', alpha=selected_alpha, wf_r2=selected_wf_r2, residual_alpha=selected_residual_alpha, page=page-1, page_size=page_size) }}">Previous</a>
+          {% else %}
+            <span class="disabled">Previous</span>
+          {% endif %}
+          {% if page < total_pages %}
+            <a href="{{ url_for('interval_browser', alpha=selected_alpha, wf_r2=selected_wf_r2, residual_alpha=selected_residual_alpha, page=page+1, page_size=page_size) }}">Next</a>
+          {% else %}
+            <span class="disabled">Next</span>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <div class="empty">No intervals matched the selected conditions.</div>
+    {% endif %}
+  </main>
+
+  <script>
+    const cards = {{ cards|tojson }};
+
+    function svgEl(name, attrs = {}) {
+      const el = document.createElementNS("http://www.w3.org/2000/svg", name);
+      for (const [key, value] of Object.entries(attrs)) {
+        el.setAttribute(key, value);
+      }
+      return el;
+    }
+
+    function pathFromPoints(points) {
+      return points.map((point, i) => `${i === 0 ? "M" : "L"}${point[0].toFixed(2)},${point[1].toFixed(2)}`).join(" ");
+    }
+
+    function addText(svg, text, x, y, attrs = {}) {
+      const el = svgEl("text", { x, y, ...attrs });
+      el.textContent = text;
+      svg.appendChild(el);
+    }
+
+    function drawMiniPlot(container, card) {
+      const series = card.series || {};
+      const dates = series.dates || [];
+      const freqs = series.mutant_freq || [];
+      if (dates.length === 0 || freqs.length === 0) {
+        container.innerHTML = '<div style="padding:18px;color:#6b7280;">No frequency data.</div>';
+        return;
+      }
+
+      const width = 360;
+      const height = 220;
+      const margin = { left: 44, right: 16, top: 18, bottom: 34 };
+      const panel = {
+        x: margin.left,
+        y: margin.top,
+        width: width - margin.left - margin.right,
+        height: height - margin.top - margin.bottom,
+      };
+      const dateMin = Math.min(...dates);
+      const dateMax = Math.max(...dates);
+      const fx = value => panel.x + ((value - dateMin) / Math.max(dateMax - dateMin, 1)) * panel.width;
+      const fy = value => panel.y + panel.height - Math.max(0, Math.min(1, value)) * panel.height;
+      const svg = svgEl("svg", { viewBox: `0 0 ${width} ${height}`, role: "img", "aria-label": "Mutant frequency plot" });
+
+      svg.appendChild(svgEl("rect", { x: panel.x, y: panel.y, width: panel.width, height: panel.height, fill: "#fff", stroke: "#d1d5db" }));
+      for (const tick of [0, 0.25, 0.5, 0.75, 1]) {
+        const y = fy(tick);
+        svg.appendChild(svgEl("line", { x1: panel.x, y1: y, x2: panel.x + panel.width, y2: y, stroke: "#eef2f7" }));
+        addText(svg, tick.toFixed(2).replace(/0+$/, "").replace(/\.$/, ""), panel.x - 8, y + 4, { "text-anchor": "end", "font-size": 10, fill: "#6b7280" });
+      }
+
+      const points = dates.map((date, idx) => [fx(date), fy(freqs[idx])]);
+      svg.appendChild(svgEl("path", { d: pathFromPoints(points), fill: "none", stroke: "#9ca3af", "stroke-width": 1.4, opacity: 0.8 }));
+      points.forEach(([x, y]) => {
+        svg.appendChild(svgEl("circle", { cx: x, cy: y, r: 2.6, fill: "#2563eb", opacity: 0.85 }));
+      });
+
+      const wfMean = series.wf_fitted_mean || [];
+      const wfPoints = dates.map((date, idx) => [date, wfMean[idx]]).filter(point => Number.isFinite(point[0]) && Number.isFinite(point[1]));
+      if (wfPoints.length >= 2) {
+        const path = wfPoints.map(([date, mean]) => [fx(date), fy(mean)]);
+        svg.appendChild(svgEl("path", { d: pathFromPoints(path), fill: "none", stroke: "#111827", "stroke-width": 2.2, "stroke-dasharray": "7 4" }));
+        addText(svg, "WF mean", panel.x + panel.width - 62, panel.y + 15, { "font-size": 11, "font-weight": 700, fill: "#111827" });
+      }
+
+      addText(svg, "Mutant frequency", panel.x, height - 10, { "font-size": 11, "font-weight": 700, fill: "#374151" });
+      container.innerHTML = "";
+      container.appendChild(svg);
+    }
+
+    cards.forEach((card, index) => {
+      const container = document.getElementById(`mini-plot-${index}`);
+      if (container) drawMiniPlot(container, card);
+    });
+  </script>
 </body>
 </html>
 """
